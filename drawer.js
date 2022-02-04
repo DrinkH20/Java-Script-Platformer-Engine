@@ -1,6 +1,6 @@
 function rectangle(x, y, w, h){
     render.beginPath();
-    render.rect(x, y, w, h)
+    render.rect(x / zoom + off_x / 2, y / zoom + off_y/2, w / zoom, h / zoom)
     render.fill();
     render.stroke();
 }
@@ -17,12 +17,15 @@ function fillColor(r, g, b){
 }
 
 function strokeSize(size){
-    render.lineWidth = String(size);
+    render.lineWidth = String(size / zoom);
 }
 
 function background(r, g, b){
     fillColor(r, g, b);
-    rectangle(0, 0, width, height);
+    render.beginPath();
+    render.rect(0, 0, width, height);
+    render.fill();
+    render.stroke();
 }
 
 function strokeColor(r, g, b){

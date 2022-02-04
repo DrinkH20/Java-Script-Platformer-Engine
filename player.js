@@ -12,11 +12,19 @@ class player{
         objects.push(this);
     }
     step() {
-        if(keyDown.D) {
+        if(keyDown.Z) {
+            zoom += .1;
+        }
+
+        if(keyDown.z) {
+            zoom += -.1;
+        }
+
+        if(keyDown.d) {
             this.xvel += 4;
         }
 
-        if(keyDown.A) {
+        if(keyDown.a) {
             this.xvel += -4;
         }
 
@@ -41,7 +49,7 @@ class player{
             this.yvel = 0;
         }
 
-        if(keyDown.W && wallCollision(this.bbx, this.x, this.y + 2)) {
+        if(keyDown.w && wallCollision(this.bbx, this.x, this.y + 2)) {
             this.yvel = -20
         }
 
@@ -52,7 +60,7 @@ class player{
         strokeSize(3);
         fillColor(100, 100, 200)
         // noFill();
-        rectangle(this.x + off_x, this.y + off_y, this.size, this.size)
+        rectangle(this.x, this.y, this.size, this.size)
     }
 
     get_posX() {

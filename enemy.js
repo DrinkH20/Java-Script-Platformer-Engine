@@ -56,6 +56,6 @@ class enemys{
         strokeSize(3);
         fillColor(this.red, 100, 200)
         noFill();
-        rectangle(this.x + off_x, this.y + off_y, this.size, this.size)
+        rectangle(this.x, this.y, this.size, this.size)
     }
 }

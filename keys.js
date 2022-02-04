@@ -18,7 +18,7 @@ for(var i=0; i<255; i++){
 }
 
 document.onkeypress = function(event){
-     var key = (event.key).toUpperCase();
+     var key = (event.key);
      console.log(event.key);
      if(!keyDown[key]){
         keyDown[key] = true;
@@ -26,7 +26,7 @@ document.onkeypress = function(event){
      }
 }
 document.onkeyup = function(event){
-    var key = (event.key).toUpperCase();
+    var key = (event.key);
     keyDown[key] = false;
     keyRelease[key] = true;
 }

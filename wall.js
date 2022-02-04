@@ -16,7 +16,7 @@ class wall {
         fillColor(this.red_amount, 160, this.blue_amount)
         // noFill();
         strokeSize(2);
-        rectangle(this.x + off_x, this.y + off_y, this.size, this.size);
+        rectangle(this.x, this.y, this.size, this.size);
     }
 }
 

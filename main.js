@@ -5,6 +5,7 @@ var height;
 var off_x = 0;
 var oof_y = 0;
 var ais = 5;
+var zoom = 1;
 
 canvas.style.left = "0px";
 canvas.style.top = "0px";
@@ -15,8 +16,8 @@ window.onresize = function(){
     height = window.innerHeight;
     canvas.width = width;
     canvas.height = height;
-    off_x = window.innerWidth/2;
-    off_y = window.innerHeight/2;
+    off_x = window.innerWidth;
+    off_y = window.innerHeight;
     drawLoop();
 }
 
