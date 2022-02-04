@@ -19,7 +19,7 @@ for(var i=0; i<255; i++){
 
 document.onkeypress = function(event){
      var key = (event.key).toUpperCase();
-     console.log(event.key)
+     console.log(event.key);
      if(!keyDown[key]){
         keyDown[key] = true;
         keyPress[key] = true;

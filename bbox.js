@@ -15,7 +15,7 @@ class bbox {
     }
 
     collision(bbx) {
-        return (this.x1 < bbx.x2 && this.x2 > bbx.x1 
+        return (this.x1 + off_x < bbx.x2 && this.x2 + off_x > bbx.x1 
              && this.y1 < bbx.y2 && this.y2 > bbx.y1);
     }
 

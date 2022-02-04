@@ -2,6 +2,9 @@ var canvas = document.getElementById("myCanvas");
 var render = canvas.getContext("2d")
 var width;
 var height;
+var off_x = 0;
+var oof_y = 0;
+var ais = 5;
 
 canvas.style.left = "0px";
 canvas.style.top = "0px";
@@ -12,6 +15,7 @@ window.onresize = function(){
     height = window.innerHeight;
     canvas.width = width;
     canvas.height = height;
+    off_x = window.innerWidth/2;
     drawLoop();
 }
 
@@ -25,19 +29,22 @@ var objects = [];
 
 
 for(var i=0; i<40; i++){
-    new wall(i*20, 600);
+    new wall(i*20 - 405, 600);
 }
 
 for(var i=0; i<20; i++){
-    new wall(0, i*20 + 200);
+    new wall(-405, i*20 + 200);
 }
 
 for(var i=0; i<20; i++){
-    new wall(780, i*20 + 200);
+    new wall(375, i*20 + 200);
 }
 
+for(var i=0; i<ais; i++){
+    var Enemy = new enemys(800, 50);
+}
 
-var Player = new player(50, 50);
+var Player = new player(640, 50);
 window.onresize();
 
 function stepLoop(){
