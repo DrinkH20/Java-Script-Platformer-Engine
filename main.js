@@ -47,13 +47,26 @@ new wall(60, 40);
 new wall(120, 0);
 new wall(140, 0);
 new wall(160, 0);
+new wall(220, -40);
+new wall(240, -40);
+new wall(260, -40);
+new wall(0, 40);
+new wall(-20, 40);
+new wall(-40, 40);
+new wall(-60, 40);
+new wall(-120, 0);
+new wall(-140, 0);
+new wall(-160, 0);
+new wall(-220, -40);
+new wall(-240, -40);
+new wall(-260, -40);
 
 
 for(var i=0; i<ais; i++){
-    var Enemy = new enemys(200, -250);
+    var Enemy = new enemys(300, -250);
 }
 
-var Player = new player(0, -250);
+var Player = new player(-300, -250);
 window.onresize();
 
 function stepLoop(){

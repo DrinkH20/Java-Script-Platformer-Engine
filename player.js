@@ -13,14 +13,14 @@ class player{
     }
     step() {
         if(keyDown.D) {
-            this.xvel += 2
+            this.xvel += 4;
         }
 
         if(keyDown.A) {
-            this.xvel += -2
+            this.xvel += -4;
         }
 
-        this.xvel = this.xvel * .9
+        this.xvel = this.xvel * .8
         this.x += this.xvel;
 
         if(wallCollision(this.bbx, this.x, this.y)) {
