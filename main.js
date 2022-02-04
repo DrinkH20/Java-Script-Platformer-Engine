@@ -11,11 +11,12 @@ canvas.style.top = "0px";
 canvas.style.position = "absolute";
 
 window.onresize = function(){
-    width = window.innerWidth;
+    width = window.innerWidth - 15;
     height = window.innerHeight;
     canvas.width = width;
     canvas.height = height;
     off_x = window.innerWidth/2;
+    off_y = window.innerHeight/2;
     drawLoop();
 }
 
@@ -29,22 +30,30 @@ var objects = [];
 
 
 for(var i=0; i<40; i++){
-    new wall(i*20 - 405, 600);
+    new wall(i*20 - 405, 100);
 }
 
 for(var i=0; i<20; i++){
-    new wall(-405, i*20 + 200);
+    new wall(-405, i*20 + -300);
 }
 
 for(var i=0; i<20; i++){
-    new wall(375, i*20 + 200);
+    new wall(375, i*20 + -300);
 }
+
+new wall(20, 40);
+new wall(40, 40);
+new wall(60, 40);
+new wall(120, 0);
+new wall(140, 0);
+new wall(160, 0);
+
 
 for(var i=0; i<ais; i++){
-    var Enemy = new enemys(800, 50);
+    var Enemy = new enemys(200, -250);
 }
 
-var Player = new player(640, 50);
+var Player = new player(0, -250);
 window.onresize();
 
 function stepLoop(){

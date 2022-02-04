@@ -4,23 +4,24 @@ class enemys{
         this.y = y;
         this.size = 20;
         this.bbx = new bbox(this.x, this.y, this.size, this.size);
+        this.red = generate_rand(255);
 
         this.gravity = 2;
-        this.jumpH = (Math.random() * 2) + 18;
+        this.jumpH = Math.round(generate_rand(1)) + 18;
+
         this.yvel = 0;
         this.xvel = 0;
-        this.ac = Math.random() * .1 + .73;
-        console.log(Math.random(10));
+        this.ac = (Math.round(Math.random()*100)/100) * .1 + .77;
 
         objects.push(this);
     }
     step() {
         if(this.x<Player.get_posX()) {
-            this.xvel += 2
+            this.xvel += 2;
         }
 
         if(this.x>Player.get_posX()) {
-            this.xvel += -2
+            this.xvel += -2;
         }
 
         this.xvel = this.xvel * this.ac
@@ -44,17 +45,17 @@ class enemys{
             this.yvel = 0;
         }
 
-        if(this.y>Player.get_posY() && wallCollision(this.bbx, this.x, this.y + 1)) {
-            this.yvel = Math.round(this.jumpH) * -1;
+        if(this.y>Player.get_posY() && wallCollision(this.bbx, this.x, this.y + 2)) {
+            this.yvel = this.jumpH * -1;
         }
 
         this.bbx.update(this.x, this.y)
     }
     draw() {
-        strokeColor(200, 200, 255);
+        strokeColor(this.red, 200, 255);
         strokeSize(3);
-        fillColor(100, 100, 200)
+        fillColor(this.red, 100, 200)
         noFill();
-        rectangle(this.x, this.y, this.size, this.size)
+        rectangle(this.x + off_x, this.y + off_y, this.size, this.size)
     }
 }

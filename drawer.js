@@ -6,7 +6,7 @@ function rectangle(x, y, w, h){
 }
 
 function generate_rand(range) {
-    return Math.floor(Math.random() * range) + 1;
+    return Math.floor(Math.random() * range);
 }
 
 function fillColor(r, g, b){
