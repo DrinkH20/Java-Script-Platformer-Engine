@@ -56,10 +56,10 @@ class player{
         this.bbx.update(this.x, this.y)
     }
     draw() {
-        strokeColor(200, 200, 255);
+        strokeColor(255, 255, 255);
         strokeSize(3);
-        fillColor(100, 100, 200)
-        // noFill();
+        fillColor(255, 255, 255);
+        noFill();
         rectangle(this.x, this.y, this.size, this.size)
     }
 

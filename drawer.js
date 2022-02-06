@@ -1,6 +1,6 @@
 function rectangle(x, y, w, h){
     render.beginPath();
-    render.rect(x / zoom + off_x / 2, y / zoom + off_y/2, w / zoom, h / zoom)
+    render.rect(x / zoom + off_x/ 2 + (mouseX-(innerWidth/2))/10, y / zoom + off_y/2 + (mouseY-(innerHeight/2))/10, w / zoom, h / zoom)
     render.fill();
     render.stroke();
 }
