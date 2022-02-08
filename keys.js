@@ -22,7 +22,6 @@ for(var i=0; i<255; i++){
 
 document.onkeypress = function(event){
      var key = (event.key);
-     console.log(event.key);
      if(!keyDown[key]){
         keyDown[key] = true;
         keyPress[key] = true;
@@ -34,15 +33,12 @@ document.onkeyup = function(event){
     keyRelease[key] = true;
     if(key == "ArrowRight"){
         right = false;
-        console.log(key, "real")
     }
     if(key == "ArrowLeft"){
         left = false;
-        console.log(key, "real")
     }
     if(key == "ArrowUp"){
         jump = false;
-        console.log(key, "real")
     }
 }
 
