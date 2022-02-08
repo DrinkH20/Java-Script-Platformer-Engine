@@ -6,8 +6,8 @@ class enemys{
         this.bbx = new bbox(this.x, this.y, this.size, this.size);
         this.red = generate_rand(255);
 
-        this.gravity = 2;
-        this.jumpH = Math.round(generate_rand(1)) + 18;
+        this.gravity = .3;
+        this.jumpH = Math.round(generate_rand(1)) + 7;
 
         this.yvel = 0;
         this.xvel = 0;
@@ -17,11 +17,11 @@ class enemys{
     }
     step() {
         if(this.x<Player.get_posX()) {
-            this.xvel += 2;
+            this.xvel += .5;
         }
 
         if(this.x>Player.get_posX()) {
-            this.xvel += -2;
+            this.xvel += -.5;
         }
 
         this.xvel = this.xvel * this.ac
@@ -45,7 +45,7 @@ class enemys{
             this.yvel = 0;
         }
 
-        if(this.y>Player.get_posY() && wallCollision(this.bbx, this.x, this.y + 2)) {
+        if(this.y -1>Player.get_posY() && wallCollision(this.bbx, this.x, this.y + 2)) {
             this.yvel = this.jumpH * -1;
         }
 

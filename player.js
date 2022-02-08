@@ -7,7 +7,7 @@ class player{
         this.size = 20;
         this.bbx = new bbox(this.x, this.y, this.size, this.size);
 
-        this.gravity = 2;
+        this.gravity = .3;
         this.yvel = 0;
         this.xvel = 0;
 
@@ -16,22 +16,22 @@ class player{
     step() {
 
         if(keyDown.Z) {
-            zoom += .1;
+            zoom += .05;
         }
 
         if(keyDown.z) {
-            zoom += -.1;
+            zoom += -.05;
         }
 
         if(keyDown.d || right) {
-            this.xvel += 4;
+            this.xvel += .7;
         }
 
         if(keyDown.a || left) {
-            this.xvel += -4;
+            this.xvel += -.7;
         }
 
-        this.xvel = this.xvel * .8
+        this.xvel = this.xvel * .9
         this.x += this.xvel;
 
         if(wallCollision(this.bbx, this.x, this.y)) {
@@ -58,11 +58,11 @@ class player{
             y_coli = true;
 
             if(keyDown.w){
-                this.yvel = -20
+                this.yvel = -8
             }
 
             if(jump){
-                this.yvel = -20;
+                this.yvel = -8;
             }
         }
 

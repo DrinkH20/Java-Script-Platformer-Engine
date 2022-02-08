@@ -83,5 +83,5 @@ function drawLoop() {
     }
 }
 
-var target_fps = 30;
+var target_fps = 100;
 setInterval(loop, 1000/target_fps);
