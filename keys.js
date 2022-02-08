@@ -1,5 +1,8 @@
 var mouseX = 0;
 var mouseY = 0;
+var left = false;
+var right = false;
+var jump = false;
 
 document.onmousemove = function(event) {
     mouseX = event.clientX;
@@ -29,6 +32,18 @@ document.onkeyup = function(event){
     var key = (event.key);
     keyDown[key] = false;
     keyRelease[key] = true;
+    if(key == "ArrowRight"){
+        right = false;
+        console.log(key, "real")
+    }
+    if(key == "ArrowLeft"){
+        left = false;
+        console.log(key, "real")
+    }
+    if(key == "ArrowUp"){
+        jump = false;
+        console.log(key, "real")
+    }
 }
 
 function keyEnd(){
@@ -37,3 +52,23 @@ function keyEnd(){
         keyRelease[i] = false;
     }
 }
+
+document.body.addEventListener("keydown", function(event) {
+		switch(event.keyCode) {
+			case 37: // left
+				if(event.key) {
+                    left = true;
+				}
+                break	
+			case 39: // right
+				if(event.key) {
+					right = true;
+				}
+                break
+			case 38: // up
+				if(event.key && y_coli) {
+                    jump = true
+				}
+            }
+		}
+	);

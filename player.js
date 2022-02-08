@@ -1,3 +1,5 @@
+var y_coli = false;
+
 class player{
     constructor(x, y) {
         this.x = x;
@@ -12,6 +14,7 @@ class player{
         objects.push(this);
     }
     step() {
+
         if(keyDown.Z) {
             zoom += .1;
         }
@@ -20,11 +23,11 @@ class player{
             zoom += -.1;
         }
 
-        if(keyDown.d) {
+        if(keyDown.d || right) {
             this.xvel += 4;
         }
 
-        if(keyDown.a) {
+        if(keyDown.a || left) {
             this.xvel += -4;
         }
 
@@ -49,8 +52,18 @@ class player{
             this.yvel = 0;
         }
 
-        if(keyDown.w && wallCollision(this.bbx, this.x, this.y + 2)) {
-            this.yvel = -20
+        y_coli = false;
+
+        if(wallCollision(this.bbx, this.x, this.y + 2)) {
+            y_coli = true;
+
+            if(keyDown.w){
+                this.yvel = -20
+            }
+
+            if(jump){
+                this.yvel = -20;
+            }
         }
 
         this.bbx.update(this.x, this.y)
