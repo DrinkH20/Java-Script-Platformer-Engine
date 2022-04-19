@@ -4,7 +4,7 @@ var width;
 var height;
 var off_x = 0;
 var oof_y = 0;
-var ais = 5;
+var ais = 1000;
 var zoom = 1;
 
 canvas.style.left = "0px";

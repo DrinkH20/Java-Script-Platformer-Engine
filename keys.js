@@ -18,12 +18,10 @@ for(var i=0; i<255; i++){
     keyPress[l] = false;
     keyRelease[l] = false;
     keyDown[l] = false;
-    console.log(l)
 }
 
 document.onkeypress = function(event){
      var key = (event.key);
-     console.log(key)
      if(!keyDown[key]){
         keyDown[key] = true;
         keyPress[key] = true;
